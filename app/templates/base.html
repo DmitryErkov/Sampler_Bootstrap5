@@ -1,0 +1,20 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }}{% else %}Welcome to My site{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <h1>{{ title }}</h1>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('index') }}">Main</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+        {# содержимое приложения которое должно быть предоставлено в блоке app_content #}
+        {% block app_content %}{% endblock %}
+{% endblock %}
